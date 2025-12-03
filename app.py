@@ -42,8 +42,9 @@ st.set_page_config(
 APP_ENV = os.getenv("APP_ENV", "").strip().lower()
 IS_DEV = APP_ENV in ("", "dev", "development")
 
-# DEBUG TEMPORAL: para ver qué está pasando
-st.write(f"DEBUG APP_ENV='{APP_ENV}', IS_DEV={IS_DEV}")
+# DEBUG solo en desarrollo
+if IS_DEV:
+    st.write(f"DEBUG APP_ENV='{APP_ENV}', IS_DEV={IS_DEV}")
 
 
 # --- Simple stub for "Pro" access validation ---
